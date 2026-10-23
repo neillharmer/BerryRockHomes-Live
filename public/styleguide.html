@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berry Rock Homes — Style Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Berry (terra cotta) */
+      --berry-50:  #fdf5f0;
+      --berry-100: #fae8df;
+      --berry-200: #e4a4a4;
+      --berry-300: #FF7C6A;
+      --berry-400: #cb7f51;
+      --berry-500: #c07040;
+      --berry-600: #ad6133;
+      --berry-700: #40342c;
+      --berry-800: #2f251e;
+      --berry-900: #1e1610;
+      --berry-950: #140b04;
+
+      /* Navy */
+      --navy-50:  #f0f4f9;
+      --navy-100: #dce6f1;
+      --navy-200: #b9cde3;
+      --navy-300: #8aaece;
+      --navy-400: #5a8db6;
+      --navy-500: #3a6e9a;
+      --navy-600: #2b567c;
+      --navy-700: #1e3f5e;
+      --navy-800: #002e5d;
+      --navy-900: #002050;
+      --navy-950: #001030;
+
+      /* Accent */
+      --coral:    #E8553D;
+      --coral-hover: #8b1a1a;
+      --sky:      #38bdf8;
+      --sky-hover: #002e5d;
+
+      /* Neutral */
+      --bg:       #FAFAFA;
+      --text:     #1e293b;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── Layout ── */
+    .page { max-width: 960px; margin: 0 auto; padding: 64px 32px 96px; }
+
+    .cover {
+      background: var(--navy-800);
+      color: white;
+      padding: 64px 32px;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .cover img { height: 72px; width: auto; margin: 0 auto 24px; display: block; }
+    .cover h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; }
+    .cover p  { color: #8aaece; font-size: 0.95rem; margin-top: 8px; }
+
+    section { margin-bottom: 64px; }
+    h2 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    h3 { font-size: 0.8rem; font-weight: 600; color: #64748b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── Color swatches ── */
+    .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; }
+    .swatch {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .swatch-color { height: 64px; }
+    .swatch-label {
+      background: white;
+      padding: 8px 10px;
+      font-size: 0.72rem;
+      line-height: 1.4;
+    }
+    .swatch-label strong { display: block; font-weight: 700; color: #0f172a; }
+    .swatch-label span   { color: #64748b; font-family: monospace; font-size: 0.68rem; }
+
+    .swatch-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .swatch-chip {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      font-size: 0.68rem; color: #64748b; font-family: monospace;
+    }
+    .chip { width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.07); }
+
+    /* ── Typography ── */
+    .type-sample { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #f1f5f9; }
+    .type-meta { font-size: 0.7rem; color: #94a3b8; margin-top: 6px; font-family: monospace; }
+
+    .t-hero  { font-size: 3rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+    .t-h2    { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+    .t-h3    { font-size: 1.4rem; font-weight: 600; line-height: 1.3; }
+    .t-lead  { font-size: 1.125rem; font-weight: 300; line-height: 1.6; }
+    .t-body  { font-size: 1rem; font-weight: 400; line-height: 1.65; }
+    .t-small { font-size: 0.875rem; font-weight: 400; line-height: 1.5; }
+    .t-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .t-caption { font-size: 0.75rem; font-weight: 400; color: #64748b; }
+
+    /* ── Buttons ── */
+    .btn-grid { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700; border-radius: 9999px;
+      cursor: pointer; border: none; text-decoration: none;
+      transition: all 0.2s;
+      font-size: 0.875rem;
+    }
+    .btn-primary-sky {
+      background: #38bdf8; color: white;
+      padding: 14px 32px; box-shadow: 0 4px 16px rgba(56,189,248,0.25);
+    }
+    .btn-primary-sky:hover { background: #002e5d; }
+
+    .btn-primary-coral {
+      background: #E8553D; color: white;
+      padding: 10px 24px;
+    }
+    .btn-primary-coral:hover { background: #8b1a1a; }
+
+    .btn-dark {
+      background: #0f172a; color: white;
+      padding: 10px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    }
+    .btn-dark:hover { background: #1e293b; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transform: translateY(-1px); }
+
+    .btn-light {
+      background: white; color: #0f172a;
+      padding: 10px 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .btn-light:hover { border-color: #0f172a; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent; color: #1e293b;
+      padding: 10px 24px;
+      border: 2px solid #e2e8f0;
+    }
+    .btn-outline:hover { border-color: #0f172a; color: #0f172a; }
+
+    /* ── Navbar preview ── */
+    .navbar-demo {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      margin-bottom: 16px;
+    }
+    .nav-dark {
+      background: transparent;
+      padding: 20px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(0,0,0,0.55);
+    }
+    .nav-scrolled {
+      background: white;
+      padding: 16px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .nav-logo { height: 36px; width: auto; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-link-light { color: rgba(255,255,255,0.9); font-size: 0.875rem; font-weight: 500; text-decoration: none; }
+    .nav-link-dark  { color: #475569; font-size: 0.875rem; font-weight: 500; text-decoration: none; }
+    .nav-link-dark:hover { color: #E8553D; }
+
+    /* ── Glass panel ── */
+    .glass-demo-bg {
+      background: linear-gradient(135deg, var(--navy-800), #1e3f5e);
+      padding: 40px;
+      border-radius: 12px;
+    }
+    .glass-panel {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.07);
+      border-radius: 24px;
+      padding: 32px;
+      color: white;
+    }
+    .glass-panel h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .glass-panel p  { font-size: 0.9rem; opacity: 0.75; line-height: 1.6; }
+
+    /* ── Hero pill card ── */
+    .pillar-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 20px;
+      color: white;
+      width: 200px;
+    }
+    .pillar-icon {
+      background: rgba(255,255,255,0.15);
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 8px;
+      color: #38bdf8; font-size: 14px;
+    }
+    .pillar-card strong { font-size: 0.875rem; display: block; margin-bottom: 4px; }
+    .pillar-card p { font-size: 0.75rem; opacity: 0.7; line-height: 1.5; }
+
+    /* ── Shadows ── */
+    .shadow-demo { display: flex; gap: 20px; flex-wrap: wrap; }
+    .shadow-box {
+      width: 140px; height: 80px;
+      background: white;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 600; color: #64748b;
+      text-align: center; padding: 12px;
+    }
+
+    /* ── Footer preview ── */
+    .footer-demo {
+      background: #001030;
+      border-radius: 12px;
+      padding: 40px;
+      color: white;
+    }
+    .footer-demo .footer-link       { color: #38bdf8; font-size: 0.875rem; text-decoration: none; display: block; margin-bottom: 8px; }
+    .footer-demo .footer-link-cta   { color: #E8553D; font-size: 0.875rem; font-weight: 600; text-decoration: none; display: block; margin-bottom: 8px; }
+    .footer-demo .footer-col-head   { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: white; margin-bottom: 12px; }
+    .footer-demo .footer-grid       { display: flex; gap: 40px; flex-wrap: wrap; }
+
+    /* ── Selection demo ── */
+    .selection-demo {
+      padding: 16px 20px;
+      background: white;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+    }
+    .selection-demo ::selection { background: rgba(173,97,51,0.3); color: #1e1610; }
+
+    /* ── Tag chip ── */
+    .tag { display: inline-block; background: #fae8df; color: #ad6133; font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 9999px; letter-spacing: 0.05em; }
+    .tag-navy { background: #dce6f1; color: #002e5d; }
+    .tag-sky  { background: #e0f2fe; color: #0369a1; }
+
+    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    /* ── Divider ── */
+    hr { border: none; border-top: 1px solid #e2e8f0; margin: 40px 0; }
+
+    /* ── Code block ── */
+    code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 20px 24px;
+      border-radius: 10px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.78rem;
+      line-height: 1.7;
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    @media print {
+      .cover { background: var(--navy-800) !important; -webkit-print-color-adjust: exact; }
+      .chip, .swatch-color { -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="cover">
+  <img src="/images/BRH_LOGO_WT.png" alt="Berry Rock Homes" onerror="this.style.display='none'" />
+  <h1>Berry Rock Homes — Style Guide</h1>
+  <p>Design tokens, typography, components &amp; patterns &nbsp;·&nbsp; April 2026</p>
+</div>
+
+<div class="page">
+
+  <!-- ── COLOR SYSTEM ──────────────────────────────────────── -->
+  <section>
+    <h2>Color System</h2>
+
+    <h3 style="margin-bottom:12px;">Primary — Berry (Terra Cotta)</h3>
+    <div class="swatch-row">
+      <div class="swatch-chip"><div class="chip" style="background:#fdf5f0;"></div>50<br>#fdf5f0</div>
+      <div class="swatch-chip"><div class="chip" style="background:#fae8df;"></div>100<br>#fae8df</div>
+      <div class="swatch-chip"><div class="chip" style="background:#e4a4a4;"></div>200<br>#e4a4a4</div>
+      <div class="swatch-chip"><div class="chip" style="background:#FF7C6A;"></div>300<br>#FF7C6A</div>
+      <div class="swatch-chip"><div class="chip" style="background:#cb7f51;"></div>400<br>#cb7f51</div>
+      <div class="swatch-chip"><div class="chip" style="background:#c07040;"></div>500<br>#c07040</div>
+      <div class="swatch-chip"><div class="chip" style="background:#ad6133; border:none;"></div>600<br>#ad6133</div>
+      <div class="swatch-chip"><div class="chip" style="background:#40342c; border:none;"></div>700<br>#40342c</div>
+      <div class="swatch-chip"><div class="chip" style="background:#2f251e; border:none;"></div>800<br>#2f251e</div>
+      <div class="swatch-chip"><div class="chip" style="background:#1e1610; border:none;"></div>900<br>#1e1610</div>
+      <div class="swatch-chip"><div class="chip" style="background:#140b04; border:none;"></div>950<br>#140b04</div>
+    </div>
+
+    <h3 style="margin-bottom:12px;">Secondary — Navy</h3>
+    <div class="swatch-row">
+      <div class="swatch-chip"><div class="chip" style="background:#f0f4f9;"></div>50<br>#f0f4f9</div>
+      <div class="swatch-chip"><div class="chip" style="background:#dce6f1;"></div>100<br>#dce6f1</div>
+      <div class="swatch-chip"><div class="chip" style="background:#b9cde3;"></div>200<br>#b9cde3</div>
+      <div class="swatch-chip"><div class="chip" style="background:#8aaece;"></div>300<br>#8aaece</div>
+      <div class="swatch-chip"><div class="chip" style="background:#5a8db6;"></div>400<br>#5a8db6</div>
+      <div class="swatch-chip"><div class="chip" style="background:#3a6e9a;"></div>500<br>#3a6e9a</div>
+      <div class="swatch-chip"><div class="chip" style="background:#2b567c;"></div>600<br>#2b567c</div>
+      <div class="swatch-chip"><div class="chip" style="background:#1e3f5e; border:none;"></div>700<br>#1e3f5e</div>
+      <div class="swatch-chip"><div class="chip" style="background:#002e5d; border:none;"></div>800★<br>#002e5d</div>
+      <div class="swatch-chip"><div class="chip" style="background:#002050; border:none;"></div>900<br>#002050</div>
+      <div class="swatch-chip"><div class="chip" style="background:#001030; border:none;"></div>950<br>#001030</div>
+    </div>
+
+    <h3 style="margin-bottom:12px; margin-top:16px;">UI Accent Colors</h3>
+    <div class="swatch-grid" style="grid-template-columns: repeat(auto-fill, minmax(140px,1fr));">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E8553D;"></div>
+        <div class="swatch-label"><strong>Coral CTA</strong><span>#E8553D</span></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8b1a1a;"></div>
+        <div class="swatch-label"><strong>Coral Hover (maroon)</strong><span>#8b1a1a</span></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#38bdf8;"></div>
+        <div class="swatch-label"><strong>Sky Blue (hero CTA)</strong><span>#38bdf8</span></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#002e5d;"></div>
+        <div class="swatch-label"><strong>Sky Hover / Navy</strong><span>#002e5d</span></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FAFAFA; border:1px solid #e2e8f0;"></div>
+        <div class="swatch-label"><strong>Page Background</strong><span>#FAFAFA</span></div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1e293b;"></div>
+        <div class="swatch-label"><strong>Body Text</strong><span>#1e293b (slate-800)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TYPOGRAPHY ──────────────────────────────────────── -->
+  <section>
+    <h2>Typography</h2>
+    <p style="font-size:0.85rem; color:#64748b; margin-bottom:28px;">
+      Single typeface: <strong>Outfit</strong> (Google Fonts) — weights 300–900.
+    </p>
+
+    <div class="type-sample">
+      <div class="t-hero">Stop renting. Start owning.</div>
+      <div class="type-meta">Hero H1 — 3–6xl · weight 800 · leading-[1.1] · tracking-tight<br>
+        Mobile: text-4xl &nbsp;·&nbsp; Tablet: text-5xl &nbsp;·&nbsp; Desktop: text-6xl
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="t-h2">Your Path to Homeownership</div>
+      <div class="type-meta">Section H2 — text-3xl/4xl · weight 700 · leading-snug</div>
+    </div>
+
+    <div class="type-sample">
+      <div class="t-h3">How the Pathway Program Works</div>
+      <div class="type-meta">Sub-section H3 — text-xl/2xl · weight 600 · leading-snug</div>
+    </div>
+
+    <div class="type-sample">
+      <div class="t-lead">We bridge the gap between renting and owning — with a clear, structured path built around you.</div>
+      <div class="type-meta">Lead / subtitle — text-lg · weight 300 (light) · leading-relaxed</div>
+    </div>
+
+    <div class="type-sample">
+      <div class="t-body">Berry Rock Homes provides structured lease-to-purchase pathways to homeownership, empowering responsible renters to achieve their dreams. Each step is transparent, supportive, and designed to get you mortgage-ready.</div>
+      <div class="type-meta">Body — text-base · weight 400 · leading-relaxed</div>
+    </div>
+
+    <div class="type-sample">
+      <div class="t-small">Move in today, even without perfect credit. Build equity from day one.</div>
+      <div class="type-meta">Small / caption — text-sm · weight 400</div>
+    </div>
+
+    <div class="type-sample">
+      <div class="t-label">Pathway Program</div>
+      <div class="type-meta">Label / column head — text-xs · weight 700 · uppercase · tracking-widest</div>
+    </div>
+  </section>
+
+  <!-- ── BUTTONS ──────────────────────────────────────── -->
+  <section>
+    <h2>Buttons</h2>
+    <p style="font-size:0.85rem; color:#64748b; margin-bottom:24px;">All buttons use <code>.btn</code> base: <code>font-bold rounded-full inline-flex items-center justify-center transition-all duration-300</code></p>
+
+    <div class="btn-grid">
+      <a class="btn btn-primary-sky" href="#">
+        Explore the Pathway
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+      <a class="btn btn-primary-coral" href="#">See If You Qualify</a>
+      <a class="btn btn-dark" href="#">.btn-dark</a>
+      <a class="btn btn-light" href="#">.btn-light</a>
+      <a class="btn btn-outline" href="#">.btn-outline</a>
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; font-size:0.8rem; margin-top:8px;">
+      <thead>
+        <tr style="border-bottom:2px solid #e2e8f0; text-align:left;">
+          <th style="padding:8px 12px; color:#64748b; font-weight:600;">Name</th>
+          <th style="padding:8px 12px; color:#64748b; font-weight:600;">Background</th>
+          <th style="padding:8px 12px; color:#64748b; font-weight:600;">Hover</th>
+          <th style="padding:8px 12px; color:#64748b; font-weight:600;">Text</th>
+          <th style="padding:8px 12px; color:#64748b; font-weight:600;">Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:8px 12px; font-weight:600;">Sky CTA</td>
+          <td style="padding:8px 12px;"><code>#38bdf8</code></td>
+          <td style="padding:8px 12px;"><code>#002e5d</code></td>
+          <td style="padding:8px 12px;">white</td>
+          <td style="padding:8px 12px; color:#64748b;">Hero primary action</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:8px 12px; font-weight:600;">Coral CTA</td>
+          <td style="padding:8px 12px;"><code>#E8553D</code></td>
+          <td style="padding:8px 12px;"><code>#8b1a1a</code></td>
+          <td style="padding:8px 12px;">white</td>
+          <td style="padding:8px 12px; color:#64748b;">Navbar, pre-qual, footer CTA</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:8px 12px; font-weight:600;">.btn-dark</td>
+          <td style="padding:8px 12px;"><code>#0f172a</code></td>
+          <td style="padding:8px 12px;"><code>#1e293b</code></td>
+          <td style="padding:8px 12px;">white</td>
+          <td style="padding:8px 12px; color:#64748b;">Interior sections on light bg</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:8px 12px; font-weight:600;">.btn-light</td>
+          <td style="padding:8px 12px;">white</td>
+          <td style="padding:8px 12px;">border → slate-800</td>
+          <td style="padding:8px 12px;"><code>#0f172a</code></td>
+          <td style="padding:8px 12px; color:#64748b;">Secondary on dark sections</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 12px; font-weight:600;">.btn-outline</td>
+          <td style="padding:8px 12px;">transparent</td>
+          <td style="padding:8px 12px;">border → slate-800</td>
+          <td style="padding:8px 12px;"><code>#1e293b</code></td>
+          <td style="padding:8px 12px; color:#64748b;">Tertiary / ghost action</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── NAVIGATION ──────────────────────────────────────── -->
+  <section>
+    <h2>Navigation</h2>
+
+    <h3 style="margin-bottom:8px;">Hero state (transparent / over dark image)</h3>
+    <div class="navbar-demo">
+      <div class="nav-dark">
+        <img src="/images/BRH_LOGO_WT.png" class="nav-logo" alt="BRH" onerror="this.style.display='none'" />
+        <nav class="nav-links">
+          <a class="nav-link-light" href="#">How It Works</a>
+          <a class="nav-link-light" href="#">Why Us</a>
+          <a class="nav-link-light" href="#">FAQ</a>
+          <a class="btn btn-primary-coral" style="padding:8px 20px; font-size:0.8rem;" href="#">See If You Qualify</a>
+        </nav>
+      </div>
+    </div>
+    <p style="font-size:0.75rem; color:#94a3b8; margin-bottom:24px;">Links: <code>text-white/90</code> &nbsp;·&nbsp; Hover: <code>#002e5d</code> (navy) &nbsp;·&nbsp; Underline anim: <code>bg-berry-600 (#ad6133)</code></p>
+
+    <h3 style="margin-bottom:8px;">Scrolled / light-header pages (white bg)</h3>
+    <div class="navbar-demo">
+      <div class="nav-scrolled">
+        <img src="/images/BRH_ICON_BK.png" style="height:36px;" alt="BRH" onerror="this.style.display='none'" />
+        <nav class="nav-links">
+          <a class="nav-link-dark" href="#">How It Works</a>
+          <a class="nav-link-dark" href="#">Why Us</a>
+          <a class="nav-link-dark" href="#">FAQ</a>
+          <a class="btn btn-primary-coral" style="padding:8px 20px; font-size:0.8rem;" href="#">See If You Qualify</a>
+        </nav>
+      </div>
+    </div>
+    <p style="font-size:0.75rem; color:#94a3b8; margin-bottom:8px;">Links: <code>text-slate-600</code> &nbsp;·&nbsp; Hover: <code>#E8553D</code> (coral) &nbsp;·&nbsp; Logo switches to icon-only at scroll</p>
+  </section>
+
+  <!-- ── HERO PILLAR CARDS ──────────────────────────────────────── -->
+  <section>
+    <h2>Hero Pillar Cards</h2>
+    <div class="glass-demo-bg" style="background: linear-gradient(135deg, #0f172a, #1e3f5e);">
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <div class="pillar-card">
+          <div class="pillar-icon">⬡</div>
+          <strong>Move In</strong>
+          <p>No mortgage needed. We buy it — you move in and lock your price.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">↑</div>
+          <strong>Build Your Credit</strong>
+          <p>Monthly payments reported to all 3 bureaus. Get mortgage-ready.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">⌂</div>
+          <strong>Own It</strong>
+          <p>When you're ready, buy the home with equity already on your side.</p>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.75rem; color:#94a3b8; margin-top:10px;">
+      <code>bg-white/10 backdrop-blur-md border-white/20 rounded-2xl</code> &nbsp;·&nbsp; Icon accent: <code>#38bdf8</code> (sky-300)
+    </p>
+  </section>
+
+  <!-- ── GLASS PANEL ──────────────────────────────────────── -->
+  <section>
+    <h2>Glass Panel</h2>
+    <div class="glass-demo-bg">
+      <div class="glass-panel">
+        <h4>Pathway Program Overview</h4>
+        <p>A structured lease-to-purchase program designed for responsible renters who are ready to own.</p>
+      </div>
+    </div>
+    <p style="font-size:0.75rem; color:#94a3b8; margin-top:10px;">
+      <code>.glass-panel</code> — <code>bg-white/70 backdrop-blur-xl border-white/40 shadow-glass rounded-3xl</code>
+    </p>
+    <pre>box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07)  /* shadow-glass */</pre>
+  </section>
+
+  <!-- ── SHADOWS ──────────────────────────────────────── -->
+  <section>
+    <h2>Shadows</h2>
+    <div class="shadow-demo">
+      <div class="shadow-box" style="box-shadow: 0 4px 20px -2px rgba(0,0,0,0.05);">
+        shadow-soft
+      </div>
+      <div class="shadow-box" style="box-shadow: 0 0 20px rgba(173,97,51,0.25);">
+        shadow-glow<br>(berry)
+      </div>
+      <div class="shadow-box" style="box-shadow: 0 8px 32px 0 rgba(31,38,135,0.07);">
+        shadow-glass
+      </div>
+      <div class="shadow-box" style="box-shadow: 0 4px 16px rgba(56,189,248,0.25);">
+        sky button<br>shadow
+      </div>
+    </div>
+    <pre style="margin-top:20px;">--shadow-soft:  0 4px 20px -2px rgba(0, 0, 0, 0.05)
+--shadow-glow:  0 0 20px rgba(173, 97, 51, 0.25)
+--shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07)</pre>
+  </section>
+
+  <!-- ── TAGS / BADGES ──────────────────────────────────────── -->
+  <section>
+    <h2>Tags &amp; Badges</h2>
+    <div class="tag-row">
+      <span class="tag">Pathway Program</span>
+      <span class="tag">Terra Cotta</span>
+      <span class="tag-navy tag">Navy</span>
+      <span class="tag-sky tag">Sky Blue</span>
+    </div>
+    <p style="font-size:0.75rem; color:#94a3b8; margin-top:12px;">
+      text-xs · font-bold · uppercase · tracking-wider · rounded-full · px-3 py-1
+    </p>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────────────────── -->
+  <section>
+    <h2>Footer</h2>
+    <div class="footer-demo">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col-head">Pathway Program</div>
+          <a class="footer-link-cta" href="#">Apply / Prequalify →</a>
+          <a class="footer-link" href="#">How It Works</a>
+          <a class="footer-link" href="#">Why Us</a>
+          <a class="footer-link" href="#">FAQ</a>
+        </div>
+        <div>
+          <div class="footer-col-head">Markets</div>
+          <a class="footer-link" href="#">Indianapolis, IN</a>
+          <a class="footer-link" href="#">Kansas City, MO</a>
+          <a class="footer-link" href="#">St. Louis, MO</a>
+        </div>
+        <div>
+          <div class="footer-col-head">Contact</div>
+          <a class="footer-link" href="#">Contact Us</a>
+          <div style="display:flex; gap:8px; margin-top:8px;">
+            <div style="background:#38bdf8; border-radius:9999px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; color:white; font-size:12px; border:1px solid #7dd3fc;">f</div>
+            <div style="background:#38bdf8; border-radius:9999px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; color:white; font-size:12px; border:1px solid #7dd3fc;">▶</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.75rem; color:#94a3b8; margin-top:10px;">
+      Background: <code>#001030</code> (navy-950) &nbsp;·&nbsp; Links: <code>#38bdf8</code> (sky-400) → hover white &nbsp;·&nbsp; CTA link: <code>#E8553D</code> (coral) &nbsp;·&nbsp; Social icons: <code>bg-sky-500</code>
+    </p>
+  </section>
+
+  <!-- ── SCROLLBAR ──────────────────────────────────────── -->
+  <section>
+    <h2>Scrollbar</h2>
+    <pre>::-webkit-scrollbar        { width: 8px; }
+::-webkit-scrollbar-track  { background: #FAFAFA; }
+::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }</pre>
+  </section>
+
+  <!-- ── DESIGN TOKENS SUMMARY ──────────────────────────────────────── -->
+  <section>
+    <h2>Design Tokens — Quick Reference</h2>
+    <pre>/* Colors */
+--coral:       #E8553D   /* CTA buttons, pre-qual, footer apply link */
+--coral-hover: #8b1a1a   /* Maroon — hover on all coral buttons */
+--sky:         #38bdf8   /* Hero CTA, footer links, social icons */
+--sky-hover:   #002e5d   /* Navy — hover on sky CTA */
+--navy:        #002e5d   /* Primary navy (body text accent, nav hover) */
+--navy-footer: #001030   /* Footer background */
+--berry-600:   #ad6133   /* Underline animation, selection bg */
+
+/* Typography */
+--font: 'Outfit', sans-serif   /* weights 300–900 */
+
+/* Border radius */
+--radius-btn:  9999px   /* pill buttons */
+--radius-card: 1rem     /* general cards */
+--radius-glass: 1.5rem  /* glass panels (rounded-3xl) */
+
+/* Transitions */
+--transition: all 0.3s ease  /* buttons, navbar */</pre>
+  </section>
+
+</div><!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-slate-800 antialiased overflow-x-hidden;
+    font-family: var(--font-outfit), 'Outfit', sans-serif;
+  }
+
+  ::selection {
+    @apply bg-slate-200 text-slate-900;
+  }
+
+  /* ── Keyboard focus (WCAG 2.4.7) ─────────────────────────────────────
+     One global indicator, so a control cannot ship without one. Before
+     this, the site relied on each browser's default ring, which is
+     near-invisible against the navy and coral surfaces.
+
+     `:focus-visible` rather than `:focus`: the ring appears for keyboard
+     and other non-pointer input, and never on a mouse click.
+
+     berry-600 is the ring colour because it is the one brand value that
+     clears 1.4.11's 3:1 non-text bar against every ground the site uses —
+     3.62:1 on white, 3.75:1 on navy-800, 3.49:1 on neutral-50, 3.39:1 on
+     sand-50. A navy ring would disappear in the footer, and berry-700
+     (correct for *text* on light grounds) drops to 2.49:1 on navy.
+
+     Components that already set their own `focus-visible:ring-*` keep
+     working: Tailwind's ring is a box-shadow, so it sits inside this
+     outline and the two read as a single thicker indicator. */
+  :focus-visible {
+    outline: 2px solid theme('colors.berry.600');
+    outline-offset: 2px;
+  }
+
+  /* ── Skip link (WCAG 2.4.1, Level A) ─────────────────────────────────
+     The first focusable element on every page. Without it, keyboard and
+     switch users pass the fixed navbar's logo, six nav pills, two dropdown
+     triggers, phone link and CTA on every single page load.
+
+     Off-screen until focused, then pinned to the viewport — `fixed`, not
+     `absolute`, so it is still reachable if the page is already scrolled.
+     z-index clears both the navbar (z-50) and the cookie banner (z-[100]).
+     Uses `:focus` rather than `:focus-visible` because the link is only
+     ever reached by keyboard, and no transition, so it appears instantly
+     for someone tabbing quickly. */
+  .skip-link {
+    @apply fixed left-4 top-4 z-[200] rounded-full bg-navy-800 px-5 py-3
+           text-sm font-semibold text-white shadow-lg;
+    transform: translateY(-200%);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /* ── Reduced motion ──────────────────────────────────────────────────
+     Only applies when the visitor has switched on Reduce Motion in macOS,
+     Windows, iOS or Android. The default is `no-preference`, so nobody who
+     has not opted in sees any change at all.
+
+     This block covers plain CSS transitions and animations. Framer Motion
+     is handled separately by MotionConfig in Shared/MotionPreferences.jsx,
+     and the hand-rolled requestAnimationFrame float in
+     Home/PathwaySection.jsx checks useReducedMotion() itself.
+
+     Durations collapse to 1ms rather than 0 or `none`: a zero-length
+     animation can skip its completion event in some engines, and code that
+     waits on one would then hang. Nothing here waits on transitionend
+     today, but 1ms keeps that safe if something later does.
+
+     scroll-behavior is included because the Pathway section's programmatic
+     smooth-scroll is exactly the kind of movement this setting is about. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 1ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    html {
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center font-bold rounded-full transition-all duration-300 whitespace-nowrap;
+  }
+
+  /* Global micro-interaction for right arrows inside buttons */
+  .btn svg.icon-right {
+    @apply transition-transform duration-300 ease-in-out ml-2;
+  }
+
+  .btn:hover svg.icon-right {
+    @apply translate-x-1;
+  }
+
+  .btn-dark {
+    @apply bg-slate-900 text-white shadow-sm border border-transparent hover:bg-slate-800 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-light {
+    @apply bg-white text-slate-900 border border-slate-200 shadow-sm hover:border-slate-800 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-slate-200 text-slate-800 hover:border-slate-800 hover:text-slate-900 shadow-sm;
+  }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-glass rounded-3xl;
+  }
+
+  /* Dark-bg frosted glass — for cards floating on photos, navy gradients,
+     or hero overlays. White content sits on top. */
+  .glass-card-dark {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+  }
+
+  /* Hover-enabled variant for interactive dark glass surfaces. */
+  .glass-card-dark-interactive {
+    @apply glass-card-dark transition-colors hover:bg-white/20;
+  }
+
+  /* Same translucent treatment, pill-shaped. For inline tags, badges,
+     secondary buttons on dark backgrounds. */
+  .glass-pill-dark {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-full;
+  }
+}
+
+@layer utilities {
+  /* Hide native scrollbars on snap carousels (still scrollable / swipeable). */
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

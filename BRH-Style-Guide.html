@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berry Rock Homes — Brand Style Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #002e5d;
+      --navy-800:  #24405d;
+      --navy-700:  #2a4b6f;
+      --navy-600:  #335e89;
+      --navy-500:  #4376a4;
+      --navy-400:  #6494bd;
+      --navy-300:  #95b7d3;
+      --navy-200:  #c1d3e5;
+      --navy-100:  #dde7f1;
+      --navy-50:   #f0f4f8;
+
+      --coral:     #E8553D;
+      --coral-dark:#c43e29;
+      --coral-300: #FF7C6A;
+      --coral-200: #e4a4a4;
+      --coral-100: #fae8df;
+      --coral-50:  #fdf5f0;
+
+      --sky:       #38bdf8;
+      --sky-dark:  #0ea5e9;
+      --sky-light: #bae6fd;
+      --sky-50:    #f0f9ff;
+
+      --white:     #ffffff;
+      --off-white: #fafafa;
+      --gray-200:  #e5e5e5;
+      --gray-600:  #4b5563;
+      --gray-900:  #0f172a;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--off-white);
+      color: var(--gray-900);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── Layout ── */
+    .page { max-width: 960px; margin: 0 auto; padding: 60px 40px 80px; }
+
+    /* ── Cover ── */
+    .cover {
+      background: var(--navy);
+      color: white;
+      border-radius: 16px;
+      padding: 64px 56px;
+      margin-bottom: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.12);
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(232, 85, 61, 0.1);
+    }
+    .cover-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 16px;
+    }
+    .cover h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .cover h1 span { color: var(--coral); }
+    .cover-sub {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--navy-200);
+      max-width: 480px;
+    }
+    .cover-meta {
+      margin-top: 40px;
+      display: flex;
+      gap: 40px;
+      font-size: 13px;
+      color: var(--navy-300);
+    }
+    .cover-meta strong { color: white; display: block; font-size: 14px; }
+
+    /* ── Section ── */
+    .section { margin-bottom: 64px; }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--navy-500);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--gray-200);
+    }
+
+    /* ── Color Grid ── */
+    .color-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .color-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .color-swatch { height: 140px; }
+    .color-info { padding: 16px 18px 18px; background: white; }
+    .color-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .color-hex {
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Courier New', monospace;
+      color: var(--gray-600);
+      background: var(--off-white);
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+    .color-role { font-size: 12px; color: var(--gray-600); line-height: 1.5; }
+
+    /* ── Tint Row ── */
+    .tint-section { margin-top: 32px; }
+    .tint-label { font-size: 13px; font-weight: 600; color: var(--gray-600); margin-bottom: 12px; }
+    .tint-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tint-chip {
+      flex: 1; min-width: 70px;
+      height: 52px;
+      border-radius: 8px;
+      position: relative;
+      cursor: default;
+    }
+    .tint-chip-label {
+      position: absolute;
+      bottom: -22px;
+      left: 50%; transform: translateX(-50%);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--gray-600);
+      white-space: nowrap;
+    }
+    .tint-row-wrap { padding-bottom: 28px; }
+
+    /* ── Typography ── */
+    .type-specimen {
+      background: white;
+      border-radius: 12px;
+      padding: 36px 40px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+    }
+    .type-meta { font-size: 12px; font-weight: 600; color: var(--navy-500); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .type-display { font-size: 56px; font-weight: 800; color: var(--navy); line-height: 1.05; }
+    .type-h1 { font-size: 40px; font-weight: 700; color: var(--navy); line-height: 1.15; }
+    .type-h2 { font-size: 28px; font-weight: 600; color: var(--navy); line-height: 1.25; }
+    .type-h3 { font-size: 20px; font-weight: 600; color: var(--navy); line-height: 1.35; }
+    .type-body { font-size: 16px; font-weight: 400; color: var(--gray-600); line-height: 1.7; max-width: 600px; }
+    .type-small { font-size: 13px; font-weight: 400; color: var(--gray-600); line-height: 1.6; }
+    .type-caption { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy-500); }
+
+    .weight-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .weight-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .weight-sample { font-size: 28px; color: var(--navy); line-height: 1; margin-bottom: 10px; }
+    .weight-name { font-size: 12px; font-weight: 600; color: var(--gray-600); }
+    .weight-num { font-size: 11px; color: var(--navy-400); }
+
+    /* ── Usage Cards ── */
+    .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .usage-card {
+      border-radius: 12px;
+      padding: 24px 28px;
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .usage-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+    .usage-card ul { padding-left: 18px; font-size: 13px; color: var(--gray-600); line-height: 1.8; }
+
+    /* ── Do / Don't ── */
+    .do-card { border-left: 4px solid #22c55e; }
+    .dont-card { border-left: 4px solid var(--coral); }
+    .do-card h4 { color: #15803d; }
+    .dont-card h4 { color: var(--coral-dark); }
+
+    /* ── Button Preview ── */
+    .btn-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+    .btn-preview {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: default;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+    .btn-coral { background: var(--coral); color: white; }
+    .btn-navy  { background: var(--navy);  color: white; }
+    .btn-outline-navy { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+    .btn-outline-coral { background: transparent; color: var(--coral); border: 2px solid var(--coral); }
+    .btn-sky { background: var(--sky); color: var(--navy); }
+
+    /* ── Callout ── */
+    .callout {
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .callout-navy { background: var(--navy-50); border-left: 4px solid var(--navy); color: var(--navy); }
+    .callout-icon { font-size: 18px; flex-shrink: 0; line-height: 1.4; }
+    .callout p { margin: 0; }
+    .callout strong { font-weight: 700; }
+
+    /* ── Print ── */
+    @media print {
+      body { background: white; }
+      .page { padding: 24px; max-width: 100%; }
+      .cover { border-radius: 8px; }
+      .color-card, .type-specimen, .usage-card, .weight-card { box-shadow: none; border: 1px solid #e5e5e5; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Cover ── -->
+  <div class="cover">
+    <div class="cover-eyebrow">Brand Identity System</div>
+    <h1>Berry Rock <span>Homes</span><br>Style Guide</h1>
+    <p class="cover-sub">Visual identity standards for content creators, designers, and marketing partners.</p>
+    <div class="cover-meta">
+      <div><strong>Version</strong>1.0</div>
+      <div><strong>Issued</strong>April 2026</div>
+      <div><strong>Audience</strong>Creative Team / Agencies</div>
+    </div>
+  </div>
+
+  <!-- ── Primary Colors ── -->
+  <div class="section">
+    <div class="section-label">01 — Color</div>
+    <div class="section-title">Primary Brand Colors</div>
+
+    <div class="color-grid">
+
+      <!-- Navy -->
+      <div class="color-card">
+        <div class="color-swatch" style="background:#002e5d;"></div>
+        <div class="color-info">
+          <div class="color-name">BRH Navy</div>
+          <div class="color-hex">#002e5d</div>
+          <div class="color-role">Primary brand color. Use for headings, navigation, footer, and anchor elements. Commands trust and authority.</div>
+        </div>
+      </div>
+
+      <!-- Coral -->
+      <div class="color-card">
+        <div class="color-swatch" style="background:#E8553D;"></div>
+        <div class="color-info">
+          <div class="color-name">BRH Coral</div>
+          <div class="color-hex">#E8553D</div>
+          <div class="color-role">Action color. CTAs, buttons, highlights, and emphasis. Warm and energetic — use to drive attention and clicks.</div>
+        </div>
+      </div>
+
+      <!-- Sky -->
+      <div class="color-card">
+        <div class="color-swatch" style="background:#38bdf8;"></div>
+        <div class="color-info">
+          <div class="color-name">BRH Sky Blue</div>
+          <div class="color-hex">#38bdf8</div>
+          <div class="color-role">Accent and highlight color. Step numbers, links, icon accents, and decorative UI elements. Friendly and approachable.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hover / Dark variants -->
+    <div style="margin-top:24px;">
+      <div class="callout callout-navy">
+        <div class="callout-icon">&#9432;</div>
+        <p><strong>Hover states:</strong> Coral darkens to <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:12px;">#c43e29</code> on hover. Navy darkens to <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:12px;">#152335</code> on hover. Sky deepens to <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:12px;">#0ea5e9</code>.</p>
+      </div>
+    </div>
+
+    <!-- Navy tints -->
+    <div class="tint-section">
+      <div class="tint-label">Navy Tint Scale</div>
+      <div class="tint-row tint-row-wrap">
+        <div class="tint-chip" style="background:#002e5d;"><span class="tint-chip-label">#002e5d</span></div>
+        <div class="tint-chip" style="background:#24405d;"><span class="tint-chip-label">#24405d</span></div>
+        <div class="tint-chip" style="background:#2a4b6f;"><span class="tint-chip-label">#2a4b6f</span></div>
+        <div class="tint-chip" style="background:#335e89;"><span class="tint-chip-label">#335e89</span></div>
+        <div class="tint-chip" style="background:#4376a4;"><span class="tint-chip-label">#4376a4</span></div>
+        <div class="tint-chip" style="background:#6494bd;"><span class="tint-chip-label">#6494bd</span></div>
+        <div class="tint-chip" style="background:#95b7d3;"><span class="tint-chip-label">#95b7d3</span></div>
+        <div class="tint-chip" style="background:#c1d3e5;"><span class="tint-chip-label">#c1d3e5</span></div>
+        <div class="tint-chip" style="background:#dde7f1; border:1px solid #e5e5e5;"><span class="tint-chip-label">#dde7f1</span></div>
+        <div class="tint-chip" style="background:#f0f4f8; border:1px solid #e5e5e5;"><span class="tint-chip-label">#f0f4f8</span></div>
+      </div>
+    </div>
+
+    <!-- Coral tints -->
+    <div class="tint-section" style="margin-top:40px;">
+      <div class="tint-label">Coral Tint Scale</div>
+      <div class="tint-row tint-row-wrap">
+        <div class="tint-chip" style="background:#c43e29;"><span class="tint-chip-label">#c43e29</span></div>
+        <div class="tint-chip" style="background:#E8553D;"><span class="tint-chip-label">#E8553D</span></div>
+        <div class="tint-chip" style="background:#FF7C6A;"><span class="tint-chip-label">#FF7C6A</span></div>
+        <div class="tint-chip" style="background:#e4a4a4;"><span class="tint-chip-label">#e4a4a4</span></div>
+        <div class="tint-chip" style="background:#fae8df; border:1px solid #e5e5e5;"><span class="tint-chip-label">#fae8df</span></div>
+        <div class="tint-chip" style="background:#fdf5f0; border:1px solid #e5e5e5;"><span class="tint-chip-label">#fdf5f0</span></div>
+      </div>
+    </div>
+
+    <!-- Sky tints -->
+    <div class="tint-section" style="margin-top:40px;">
+      <div class="tint-label">Sky Blue Tint Scale</div>
+      <div class="tint-row tint-row-wrap">
+        <div class="tint-chip" style="background:#0369a1;"><span class="tint-chip-label">#0369a1</span></div>
+        <div class="tint-chip" style="background:#0ea5e9;"><span class="tint-chip-label">#0ea5e9</span></div>
+        <div class="tint-chip" style="background:#38bdf8;"><span class="tint-chip-label">#38bdf8</span></div>
+        <div class="tint-chip" style="background:#7dd3fc;"><span class="tint-chip-label">#7dd3fc</span></div>
+        <div class="tint-chip" style="background:#bae6fd; border:1px solid #e5e5e5;"><span class="tint-chip-label">#bae6fd</span></div>
+        <div class="tint-chip" style="background:#f0f9ff; border:1px solid #e5e5e5;"><span class="tint-chip-label">#f0f9ff</span></div>
+      </div>
+    </div>
+
+    <!-- ── Article Category Tag Accents ── -->
+    <div style="margin-top:48px;">
+      <div class="section-title" style="font-size:22px; margin-bottom:8px;">Article Category Tag Accents</div>
+      <div class="callout callout-navy" style="margin-bottom:24px;">
+        <div class="callout-icon">&#9432;</div>
+        <p>Muted, on-brand accents reserved for the small category pills on article cards and subpages. <strong>No rainbow or electric accents.</strong> Each tag uses three tints: <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:12px;">bg-{color}-50</code> background, <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:12px;">text-{color}-700</code> label, <code style="background:#fff;padding:2px 6px;border-radius:3px;font-size:12px;">border-{color}-200</code> border.</p>
+      </div>
+
+      <div class="color-grid">
+
+        <!-- Navy tag (Homeownership) -->
+        <div class="color-card">
+          <div class="color-swatch" style="background:#f0f4f9;">
+            <span style="display:inline-block;margin:18px;padding:4px 12px;border-radius:9999px;background:#f0f4f9;color:#002e5d;border:1px solid #b9cde3;font-size:13px;font-weight:600;">Homeownership</span>
+          </div>
+          <div class="color-info">
+            <div class="color-name">Navy</div>
+            <div class="color-hex">bg 50 / text 800 / border 200</div>
+            <div class="color-role">Homeownership category tag.</div>
+          </div>
+        </div>
+
+        <!-- Sage tag (Financial Literacy) -->
+        <div class="color-card">
+          <div class="color-swatch" style="background:#f3f6f3;">
+            <span style="display:inline-block;margin:18px;padding:4px 12px;border-radius:9999px;background:#f3f6f3;color:#4d6150;border:1px solid #cbd8cb;font-size:13px;font-weight:600;">Financial Literacy</span>
+          </div>
+          <div class="color-info">
+            <div class="color-name">Sage</div>
+            <div class="color-hex">#f3f6f3 / #4d6150 / #cbd8cb</div>
+            <div class="color-role">Muted green. Financial Literacy category tag.</div>
+          </div>
+        </div>
+
+        <!-- Khaki tag (Credit Building) -->
+        <div class="color-card">
+          <div class="color-swatch" style="background:#f7f4ec;">
+            <span style="display:inline-block;margin:18px;padding:4px 12px;border-radius:9999px;background:#f7f4ec;color:#6b5d3e;border:1px solid #e2d8bf;font-size:13px;font-weight:600;">Credit Building</span>
+          </div>
+          <div class="color-info">
+            <div class="color-name">Khaki</div>
+            <div class="color-hex">#f7f4ec / #6b5d3e / #e2d8bf</div>
+            <div class="color-role">Warm tan. Credit Building category tag.</div>
+          </div>
+        </div>
+
+        <!-- Sky tag (Market Insights) -->
+        <div class="color-card">
+          <div class="color-swatch" style="background:#f0f9ff;">
+            <span style="display:inline-block;margin:18px;padding:4px 12px;border-radius:9999px;background:#f0f9ff;color:#0369a1;border:1px solid #bae6fd;font-size:13px;font-weight:600;">Market Insights</span>
+          </div>
+          <div class="color-info">
+            <div class="color-name">Sky Blue</div>
+            <div class="color-hex">#f0f9ff / #0369a1 / #bae6fd</div>
+            <div class="color-role">Lighter ocean blue, distinct from navy. Market Insights category tag.</div>
+          </div>
+        </div>
+
+        <!-- Coral tag (Success Story) -->
+        <div class="color-card">
+          <div class="color-swatch" style="background:#fff5f3;">
+            <span style="display:inline-block;margin:18px;padding:4px 12px;border-radius:9999px;background:#fff5f3;color:#c0392b;border:1px solid #fbc5bc;font-size:13px;font-weight:600;">Success Story</span>
+          </div>
+          <div class="color-info">
+            <div class="color-name">Coral (Berry)</div>
+            <div class="color-hex">#fff5f3 / #c0392b / #fbc5bc</div>
+            <div class="color-role">Success Story category tag.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Typography ── -->
+  <div class="section">
+    <div class="section-label">02 — Typography</div>
+    <div class="section-title">Outfit — The BRH Font</div>
+
+    <div class="callout callout-navy" style="margin-bottom:28px;">
+      <div class="callout-icon">&#9432;</div>
+      <p><strong>Outfit</strong> is the sole brand typeface. It is a geometric sans-serif available free on Google Fonts. All digital and print content should use Outfit exclusively. Download at <strong>fonts.google.com/specimen/Outfit</strong>.</p>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Display — 56px / 800 weight</div>
+      <div class="type-display">Own Your Future.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">H1 Heading — 40px / 700 weight</div>
+      <div class="type-h1">Your Path to Homeownership Starts Here</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">H2 Heading — 28px / 600 weight</div>
+      <div class="type-h2">How Our Lease-to-Own Program Works</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">H3 Heading — 20px / 600 weight</div>
+      <div class="type-h3">Step 1: Get Pre-Qualified in Minutes</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Body Copy — 16px / 400 weight</div>
+      <div class="type-body">Berry Rock Homes gives aspiring homeowners a clear, affordable path to ownership. Our lease-to-own program is designed for people who are ready for a home but need a bridge to get there — no perfect credit required.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Small / Caption — 13px / 400 weight</div>
+      <div class="type-small">Terms and conditions apply. Program availability varies by location. Contact us for full program details.</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-meta">Eyebrow Label — 11px / 700 weight / uppercase / tracked</div>
+      <div class="type-caption">How It Works</div>
+    </div>
+
+    <!-- Weight Grid -->
+    <div style="margin-top:32px;">
+      <div class="tint-label" style="margin-bottom:16px;">Available Weights</div>
+      <div class="weight-grid">
+        <div class="weight-card">
+          <div class="weight-sample" style="font-weight:300;">Aa</div>
+          <div class="weight-name">Light</div>
+          <div class="weight-num">300</div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-sample" style="font-weight:400;">Aa</div>
+          <div class="weight-name">Regular</div>
+          <div class="weight-num">400</div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-sample" style="font-weight:500;">Aa</div>
+          <div class="weight-name">Medium</div>
+          <div class="weight-num">500</div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-sample" style="font-weight:600;">Aa</div>
+          <div class="weight-name">SemiBold</div>
+          <div class="weight-num">600</div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-sample" style="font-weight:700;">Aa</div>
+          <div class="weight-name">Bold</div>
+          <div class="weight-num">700</div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-sample" style="font-weight:800;">Aa</div>
+          <div class="weight-name">ExtraBold</div>
+          <div class="weight-num">800</div>
+        </div>
+        <div class="weight-card">
+          <div class="weight-sample" style="font-weight:900;">Aa</div>
+          <div class="weight-name">Black</div>
+          <div class="weight-num">900</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Buttons ── -->
+  <div class="section">
+    <div class="section-label">03 — UI Elements</div>
+    <div class="section-title">Button Styles</div>
+
+    <div style="background:white; border-radius:12px; padding:32px 36px; box-shadow:0 2px 12px rgba(0,0,0,0.06); margin-bottom:20px;">
+      <div class="tint-label" style="margin-bottom:16px;">On Light Backgrounds</div>
+      <div class="btn-row">
+        <span class="btn-preview btn-coral">Get Pre-Qualified</span>
+        <span class="btn-preview btn-navy">Learn More</span>
+        <span class="btn-preview btn-outline-navy">Explore Homes</span>
+        <span class="btn-preview btn-outline-coral">See How It Works</span>
+      </div>
+    </div>
+
+    <div style="background:var(--navy); border-radius:12px; padding:32px 36px; margin-bottom:20px;">
+      <div class="tint-label" style="margin-bottom:16px; color:var(--navy-300);">On Dark (Navy) Backgrounds</div>
+      <div class="btn-row">
+        <span class="btn-preview btn-coral">Get Pre-Qualified</span>
+        <span class="btn-preview btn-sky">Explore the Pathway</span>
+        <span class="btn-preview" style="background:white; color:var(--navy);">Learn More</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Usage ── -->
+  <div class="section">
+    <div class="section-label">04 — Usage Guidelines</div>
+    <div class="section-title">Color Application Rules</div>
+
+    <div class="usage-grid">
+      <div class="usage-card do-card">
+        <h4>Do</h4>
+        <ul>
+          <li>Use BRH Navy for all headings and primary text</li>
+          <li>Use BRH Coral exclusively for CTAs and key action elements</li>
+          <li>Use Sky Blue as an accent — step numbers, links, icon highlights</li>
+          <li>Pair navy backgrounds with white or sky blue type</li>
+          <li>Use coral tints (50–100) for warm background sections</li>
+          <li>Maintain sufficient contrast — navy on white, white on coral/navy</li>
+          <li>Put icons and number badges inside a circle (border-radius: 50% / rounded-full), never a rounded square</li>
+        </ul>
+      </div>
+      <div class="usage-card dont-card">
+        <h4>Don't</h4>
+        <ul>
+          <li>Don't use coral for body text or decorative elements</li>
+          <li>Don't wrap an icon or number badge in a rounded square — icon chips are always circular</li>
+          <li>Don't place sky blue on white without sufficient weight/size</li>
+          <li>Don't use more than 2 primary colors in a single component</li>
+          <li>Don't mix coral and sky blue as competing focal points</li>
+          <li>Don't substitute other fonts for Outfit</li>
+          <li>Don't use font weights below 400 for body text</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <div class="usage-grid">
+        <div class="usage-card" style="border-left:4px solid var(--coral);">
+          <h4 style="color:var(--navy); margin-bottom:10px;">Coral — Primary CTA</h4>
+          <ul>
+            <li>"Get Pre-Qualified" / "Apply Now" buttons</li>
+            <li>Key stat callouts and highlights</li>
+            <li>Badge labels and tags</li>
+            <li>Inline emphasis in headlines</li>
+          </ul>
+        </div>
+        <div class="usage-card" style="border-left:4px solid var(--navy);">
+          <h4 style="color:var(--navy); margin-bottom:10px;">Navy — Structure & Authority</h4>
+          <ul>
+            <li>All H1–H3 headings</li>
+            <li>Navigation bar</li>
+            <li>Footer background</li>
+            <li>Secondary buttons and borders</li>
+          </ul>
+        </div>
+        <div class="usage-card" style="border-left:4px solid var(--sky);">
+          <h4 style="color:var(--navy); margin-bottom:10px;">Sky Blue — Friendliness & Flow</h4>
+          <ul>
+            <li>Step / process numbers</li>
+            <li>Hyperlinks</li>
+            <li>Icon accents and indicators</li>
+            <li>Decorative UI elements</li>
+          </ul>
+        </div>
+        <div class="usage-card" style="border-left:4px solid var(--gray-200);">
+          <h4 style="color:var(--navy); margin-bottom:10px;">Neutrals — Supporting Roles</h4>
+          <ul>
+            <li>Body copy: slate-600 (#4b5563)</li>
+            <li>Card / panel backgrounds: #f0f4f8</li>
+            <li>Off-white page background: #fafafa</li>
+            <li>Dividers and borders: #e5e5e5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Quick Reference ── -->
+  <div class="section">
+    <div class="section-label">05 — Quick Reference</div>
+    <div class="section-title">All Values at a Glance</div>
+
+    <table style="width:100%; border-collapse:collapse; font-size:14px; background:white; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+      <thead>
+        <tr style="background:var(--navy); color:white;">
+          <th style="padding:14px 18px; text-align:left; font-weight:600;">Name</th>
+          <th style="padding:14px 18px; text-align:left; font-weight:600;">Hex</th>
+          <th style="padding:14px 18px; text-align:left; font-weight:600;">Role</th>
+          <th style="padding:14px 18px; text-align:left; font-weight:600;">Swatch</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #f0f4f8;">
+          <td style="padding:12px 18px; font-weight:600;">BRH Navy</td>
+          <td style="padding:12px 18px; font-family:monospace;">#002e5d</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">Primary / Headings / Nav / Footer</td>
+          <td style="padding:12px 18px;"><div style="width:28px;height:28px;border-radius:6px;background:#002e5d;"></div></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f4f8; background:#fafafa;">
+          <td style="padding:12px 18px; font-weight:600;">BRH Coral</td>
+          <td style="padding:12px 18px; font-family:monospace;">#E8553D</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">CTAs / Buttons / Highlights</td>
+          <td style="padding:12px 18px;"><div style="width:28px;height:28px;border-radius:6px;background:#E8553D;"></div></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f4f8;">
+          <td style="padding:12px 18px; font-weight:600;">BRH Sky Blue</td>
+          <td style="padding:12px 18px; font-family:monospace;">#38bdf8</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">Accents / Step Numbers / Links</td>
+          <td style="padding:12px 18px;"><div style="width:28px;height:28px;border-radius:6px;background:#38bdf8;"></div></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f4f8; background:#fafafa;">
+          <td style="padding:12px 18px; font-weight:600;">Coral Hover</td>
+          <td style="padding:12px 18px; font-family:monospace;">#c43e29</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">CTA hover state</td>
+          <td style="padding:12px 18px;"><div style="width:28px;height:28px;border-radius:6px;background:#c43e29;"></div></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f4f8;">
+          <td style="padding:12px 18px; font-weight:600;">Sky Hover</td>
+          <td style="padding:12px 18px; font-family:monospace;">#0ea5e9</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">Sky blue hover/active state</td>
+          <td style="padding:12px 18px;"><div style="width:28px;height:28px;border-radius:6px;background:#0ea5e9;"></div></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f4f8; background:#fafafa;">
+          <td style="padding:12px 18px; font-weight:600;">Body Text</td>
+          <td style="padding:12px 18px; font-family:monospace;">#4b5563</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">Paragraph / secondary copy</td>
+          <td style="padding:12px 18px;"><div style="width:28px;height:28px;border-radius:6px;background:#4b5563;"></div></td>
+        </tr>
+        <tr style="border-bottom:1px solid #f0f4f8;">
+          <td style="padding:12px 18px; font-weight:600;">Off-White BG</td>
+          <td style="padding:12px 18px; font-family:monospace;">#fafafa</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">Page background</td>
+          <td style="padding:12px 18px;"><div style="width:28px;height:28px;border-radius:6px;background:#fafafa;border:1px solid #e5e5e5;"></div></td>
+        </tr>
+        <tr style="background:#fafafa;">
+          <td style="padding:12px 18px; font-weight:600;">Typeface</td>
+          <td style="padding:12px 18px; font-family:monospace;">Outfit</td>
+          <td style="padding:12px 18px; color:var(--gray-600);">All text — weights 300–900</td>
+          <td style="padding:12px 18px; font-size:18px; font-weight:700; color:var(--navy);">Aa</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── Footer ── -->
+  <div style="border-top:2px solid var(--gray-200); padding-top:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+    <div>
+      <div style="font-size:18px; font-weight:800; color:var(--navy);">Berry Rock Homes</div>
+      <div style="font-size:12px; color:var(--gray-600); margin-top:4px;">Brand Style Guide v1.0 — April 2026</div>
+    </div>
+    <div style="font-size:12px; color:var(--navy-400); text-align:right;">
+      Questions? Contact the BRH design lead<br>
+      for brand assets and template files.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

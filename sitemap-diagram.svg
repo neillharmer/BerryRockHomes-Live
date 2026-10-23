@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600">
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="600" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#334155" letter-spacing="1">BERRY ROCK HOMES — SITE MAP</text>
+
+  <!-- ═══ HOME ═══ -->
+  <rect x="510" y="34" width="180" height="36" rx="8" fill="#002e5d"/>
+  <text x="600" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="white">HOME</text>
+  <text x="600" y="63" text-anchor="middle" font-size="9" fill="#93c5fd">/</text>
+
+  <!-- Home → horizontal bar -->
+  <line x1="600" y1="70" x2="600" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="120" y1="90" x2="1080" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- Drops from horizontal bar to category headers -->
+  <line x1="120" y1="90"  x2="120"  y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="360" y1="90"  x2="360"  y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="600" y1="90"  x2="600"  y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="840" y1="90"  x2="840"  y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="1080" y1="90" x2="1080" y2="108" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- ═══ CATEGORY HEADERS ═══ -->
+  <rect x="25"   y="108" width="190" height="30" rx="6" fill="#002e5d"/>
+  <text x="120"  y="127" text-anchor="middle" font-size="10" font-weight="700" fill="white">PATHWAY PROGRAM</text>
+
+  <rect x="265"  y="108" width="190" height="30" rx="6" fill="#002e5d"/>
+  <text x="360"  y="127" text-anchor="middle" font-size="10" font-weight="700" fill="white">MARKETS</text>
+
+  <rect x="505"  y="108" width="190" height="30" rx="6" fill="#002e5d"/>
+  <text x="600"  y="127" text-anchor="middle" font-size="10" font-weight="700" fill="white">REALTORS</text>
+
+  <rect x="745"  y="108" width="190" height="30" rx="6" fill="#002e5d"/>
+  <text x="840"  y="127" text-anchor="middle" font-size="10" font-weight="700" fill="white">NEWS &amp; MEDIA</text>
+
+  <rect x="985"  y="108" width="190" height="30" rx="6" fill="#002e5d"/>
+  <text x="1080" y="127" text-anchor="middle" font-size="10" font-weight="700" fill="white">CONTACT</text>
+
+  <!-- Vertical connector lines (category header bottom → last item center) -->
+  <!-- Pathway: 9 items. First top=152, spacing=40. Last top=152+8×40=472, bottom=498 -->
+  <line x1="120" y1="138" x2="120" y2="498" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Markets: 6 items. Last top=152+5×40=352, bottom=378 -->
+  <line x1="360" y1="138" x2="360" y2="378" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Realtors: 3 items. Last top=152+2×40=232, bottom=258 -->
+  <line x1="600" y1="138" x2="600" y2="258" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- News: 2 items. Last top=152+40=192, bottom=218 -->
+  <line x1="840" y1="138" x2="840" y2="218" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Contact: 1 item. Bottom=178 -->
+  <line x1="1080" y1="138" x2="1080" y2="178" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- ═══ PATHWAY PROGRAM ITEMS ═══ -->
+  <!-- Each item: left edge = col_center-95=25, width=190, height=26, spacing=40 -->
+  <!-- Horizontal nub from vertical line to item left edge omitted — clean grouping -->
+
+  <!-- Apply / Prequalify — coral (primary CTA) -->
+  <line x1="120" y1="165" x2="130" y2="165" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="152" width="180" height="26" rx="4" fill="#E8553D"/>
+  <text x="120" y="163" text-anchor="middle" font-size="9" font-weight="600" fill="white">Apply / Prequalify</text>
+  <text x="120" y="173" text-anchor="middle" font-size="8" fill="#fecaca">/apply</text>
+
+  <!-- How It Works -->
+  <line x1="120" y1="205" x2="130" y2="205" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="192" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="203" text-anchor="middle" font-size="9" fill="#1e3a5f">How It Works</text>
+  <text x="120" y="213" text-anchor="middle" font-size="8" fill="#64748b">/how-it-works</text>
+
+  <!-- Pathway -->
+  <line x1="120" y1="245" x2="130" y2="245" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="232" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="243" text-anchor="middle" font-size="9" fill="#1e3a5f">Pathway</text>
+  <text x="120" y="253" text-anchor="middle" font-size="8" fill="#64748b">/pathway</text>
+
+  <!-- Is It For Me -->
+  <line x1="120" y1="285" x2="130" y2="285" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="272" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="283" text-anchor="middle" font-size="9" fill="#1e3a5f">Is It For Me?</text>
+  <text x="120" y="293" text-anchor="middle" font-size="8" fill="#64748b">/is-it-for-me</text>
+
+  <!-- Why Us -->
+  <line x1="120" y1="325" x2="130" y2="325" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="312" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="323" text-anchor="middle" font-size="9" fill="#1e3a5f">Why Us</text>
+  <text x="120" y="333" text-anchor="middle" font-size="8" fill="#64748b">/why-us</text>
+
+  <!-- By the Numbers -->
+  <line x1="120" y1="365" x2="130" y2="365" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="352" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="363" text-anchor="middle" font-size="9" fill="#1e3a5f">By the Numbers</text>
+  <text x="120" y="373" text-anchor="middle" font-size="8" fill="#64748b">/by-the-numbers</text>
+
+  <!-- Compare Us -->
+  <line x1="120" y1="405" x2="130" y2="405" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="392" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="403" text-anchor="middle" font-size="9" fill="#1e3a5f">Compare Us</text>
+  <text x="120" y="413" text-anchor="middle" font-size="8" fill="#64748b">/compare-us</text>
+
+  <!-- FAQ -->
+  <line x1="120" y1="445" x2="130" y2="445" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="432" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="443" text-anchor="middle" font-size="9" fill="#1e3a5f">FAQ</text>
+  <text x="120" y="453" text-anchor="middle" font-size="8" fill="#64748b">/faq</text>
+
+  <!-- Success Stories -->
+  <line x1="120" y1="485" x2="130" y2="485" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="30" y="472" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="120" y="483" text-anchor="middle" font-size="9" fill="#1e3a5f">Success Stories</text>
+  <text x="120" y="493" text-anchor="middle" font-size="8" fill="#64748b">/success-stories</text>
+
+  <!-- ═══ MARKETS ITEMS ═══ -->
+  <line x1="360" y1="165" x2="370" y2="165" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="270" y="152" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="360" y="163" text-anchor="middle" font-size="9" fill="#1e3a5f">Indianapolis, IN</text>
+  <text x="360" y="173" text-anchor="middle" font-size="8" fill="#64748b">/markets/indianapolis-in</text>
+
+  <line x1="360" y1="205" x2="370" y2="205" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="270" y="192" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="360" y="203" text-anchor="middle" font-size="9" fill="#1e3a5f">Kansas City, MO</text>
+  <text x="360" y="213" text-anchor="middle" font-size="8" fill="#64748b">/markets/kansas-city-mo</text>
+
+  <line x1="360" y1="245" x2="370" y2="245" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="270" y="232" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="360" y="243" text-anchor="middle" font-size="9" fill="#1e3a5f">Kansas City, KS</text>
+  <text x="360" y="253" text-anchor="middle" font-size="8" fill="#64748b">/markets/kansas-city-ks</text>
+
+  <line x1="360" y1="285" x2="370" y2="285" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="270" y="272" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="360" y="283" text-anchor="middle" font-size="9" fill="#1e3a5f">Oklahoma City, OK</text>
+  <text x="360" y="293" text-anchor="middle" font-size="8" fill="#64748b">/markets/oklahoma-city-ok</text>
+
+  <line x1="360" y1="325" x2="370" y2="325" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="270" y="312" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="360" y="323" text-anchor="middle" font-size="9" fill="#1e3a5f">St. Louis, MO</text>
+  <text x="360" y="333" text-anchor="middle" font-size="8" fill="#64748b">/markets/st-louis-mo</text>
+
+  <line x1="360" y1="365" x2="370" y2="365" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="270" y="352" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="360" y="363" text-anchor="middle" font-size="9" fill="#1e3a5f">Tulsa, OK</text>
+  <text x="360" y="373" text-anchor="middle" font-size="8" fill="#64748b">/markets/tulsa-ok</text>
+
+  <!-- ═══ REALTORS ITEMS ═══ -->
+  <line x1="600" y1="165" x2="610" y2="165" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="510" y="152" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="600" y="163" text-anchor="middle" font-size="9" fill="#1e3a5f">For Agents</text>
+  <text x="600" y="173" text-anchor="middle" font-size="8" fill="#64748b">/for-agents</text>
+
+  <line x1="600" y1="205" x2="610" y2="205" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="510" y="192" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="600" y="203" text-anchor="middle" font-size="9" fill="#1e3a5f">Agent Resources</text>
+  <text x="600" y="213" text-anchor="middle" font-size="8" fill="#64748b">/agent-resources</text>
+
+  <line x1="600" y1="245" x2="610" y2="245" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="510" y="232" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="600" y="243" text-anchor="middle" font-size="9" fill="#1e3a5f">Resources</text>
+  <text x="600" y="253" text-anchor="middle" font-size="8" fill="#64748b">/resources</text>
+
+  <!-- ═══ NEWS & MEDIA ITEMS ═══ -->
+  <line x1="840" y1="165" x2="850" y2="165" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="750" y="152" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="840" y="163" text-anchor="middle" font-size="9" fill="#1e3a5f">Press Releases</text>
+  <text x="840" y="173" text-anchor="middle" font-size="8" fill="#64748b">/news</text>
+
+  <line x1="840" y1="205" x2="850" y2="205" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="750" y="192" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="840" y="203" text-anchor="middle" font-size="9" fill="#1e3a5f">Articles</text>
+  <text x="840" y="213" text-anchor="middle" font-size="8" fill="#64748b">/articles</text>
+
+  <!-- ═══ CONTACT ITEMS ═══ -->
+  <line x1="1080" y1="165" x2="1090" y2="165" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="990" y="152" width="180" height="26" rx="4" fill="#dbeafe"/>
+  <text x="1080" y="163" text-anchor="middle" font-size="9" fill="#1e3a5f">Contact Us</text>
+  <text x="1080" y="173" text-anchor="middle" font-size="8" fill="#64748b">/contact</text>
+
+  <!-- ═══ LEGEND ═══ -->
+  <rect x="30" y="540" width="1140" height="1" fill="#e2e8f0"/>
+  <rect x="30"  y="554" width="14" height="14" rx="2" fill="#002e5d"/>
+  <text x="50"  y="564" font-size="9" fill="#64748b">Section header</text>
+  <rect x="160" y="554" width="14" height="14" rx="2" fill="#E8553D"/>
+  <text x="180" y="564" font-size="9" fill="#64748b">Primary CTA</text>
+  <rect x="265" y="554" width="14" height="14" rx="2" fill="#dbeafe"/>
+  <text x="285" y="564" font-size="9" fill="#64748b">Page</text>
+  <text x="1170" y="564" text-anchor="end" font-size="8" fill="#94a3b8">berryrockhomes.com · 2026</text>
+</svg>
